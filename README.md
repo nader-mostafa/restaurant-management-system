@@ -1,6 +1,5 @@
 # Restaurant Management System
 
-
 ## Overview
 This is a Java-based restaurant management system with a modern GUI and SQLite database.
 
