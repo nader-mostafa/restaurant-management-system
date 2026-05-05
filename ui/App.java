@@ -1,7 +1,5 @@
 package ui;
 
-// ده الملف الأساسي اللي بيبدأ منه المشروع وبيشغل أول شاشة للمستخدم (شاشة تسجيل الدخول).
-
 import com.formdev.flatlaf.FlatDarkLaf;
 import db.DatabaseManager;
 

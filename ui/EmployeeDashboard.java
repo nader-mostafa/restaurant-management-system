@@ -1,7 +1,5 @@
 package ui;
 
-// واجهة الموظف (POS) - مبسطة باستخدام UIFactory
-
 import models.Models.*;
 import services.AdminService;
 import services.AuthService;

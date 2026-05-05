@@ -1,7 +1,5 @@
 package ui;
 
-// ملف مساعد يحتوي على كل الـ UI components المتكررة عشان الـ Dashboards تبقى أقل كوداً.
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;

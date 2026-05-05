@@ -1,7 +1,7 @@
 package db;
 
-// ده الملف المسؤول عن قاعدة البيانات (Database).
-// قمنا بتنظيمه ليكون "Modular" بحيث يكون لكل جدول وظيفة إنشاء خاصة به لسهولة التعديل.
+// ده الملف المسؤول عن قاعدة البيانات (Database)
+// // بحيث يكون لكل جدول وظيفة إنشاء خاصة به لسهولة التعديل
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,21 +13,15 @@ import java.sql.ResultSet;
 public class DatabaseManager {
     private static final String URL = "jdbc:sqlite:restaurant.db";
 
-    /**
-     * الحصول على اتصال بقاعدة البيانات
-     */
     public static Connection getConnection() throws SQLException {
         try {
-            Class.forName("org.sqlite.JDBC");
+             Class.forName("org.sqlite.JDBC");
         } catch (ClassNotFoundException e) {
             System.err.println("SQLite JDBC Driver not found!");
         }
         return DriverManager.getConnection(URL);
     }
 
-    /**
-     * تهيئة قاعدة البيانات وإنشاء الجداول إذا لم تكن موجودة
-     */
     public static void initializeDatabase() {
         try (Connection conn = getConnection(); Statement stmt = conn.createStatement()) {
             System.out.println("Connecting to database and initializing tables...");

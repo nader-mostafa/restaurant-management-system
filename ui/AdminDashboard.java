@@ -1,6 +1,6 @@
 package ui;
 
-// واجهة المدير - مبسطة باستخدام UIFactory
+// مبسطة باستخدام UIFactory
 
 import models.Models.*;
 import services.AdminService;
