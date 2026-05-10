@@ -1,7 +1,5 @@
 package ui;
 
-// مبسطة باستخدام UIFactory
-
 import models.Models.*;
 import services.AdminService;
 import services.AuthService;
@@ -42,7 +40,6 @@ public class AdminDashboard extends JFrame {
         add(tabs, BorderLayout.CENTER);
     }
 
-    // ─── Edit Profile Dialog ──────────────────────────────────────────────────
 
     private void showEditProfileDialog() {
         JPanel p = new JPanel(new GridLayout(6, 2, 10, 8));
@@ -71,7 +68,6 @@ public class AdminDashboard extends JFrame {
         }
     }
 
-    // ─── Employees ────────────────────────────────────────────────────────────
 
     private JPanel createEmployeePanel() {
         JPanel panel = UIFactory.borderPanel("Employee Management", 20);
@@ -141,8 +137,6 @@ public class AdminDashboard extends JFrame {
         m.setRowCount(0);
         for (Employee e : AdminService.getAllEmployees()) m.addRow(new Object[]{e.getId(), e.getUsername(), e.getName()});
     }
-
-    // ─── Meals ────────────────────────────────────────────────────────────────
 
     private JPanel createMealPanel() {
         JPanel panel = UIFactory.borderPanel("Meals Management", 20);
@@ -215,8 +209,7 @@ public class AdminDashboard extends JFrame {
         for (Meal meal : AdminService.getAllMeals()) m.addRow(new Object[]{meal.getId(), meal.getName(), meal.getCategory(), meal.getPrice()});
     }
 
-    // ─── Offers ───────────────────────────────────────────────────────────────
-
+   
     private JPanel createOffersPanel() {
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBorder(BorderFactory.createEmptyBorder(20, 40, 20, 40));
@@ -246,7 +239,7 @@ public class AdminDashboard extends JFrame {
         return panel;
     }
 
-    // ─── Sales History ────────────────────────────────────────────────────────
+   
 
     private JPanel createSalesHistoryPanel() {
         JPanel panel = UIFactory.borderPanel("Sales History", 20);
@@ -269,7 +262,7 @@ public class AdminDashboard extends JFrame {
         return panel;
     }
 
-    // ─── Loyalty ──────────────────────────────────────────────────────────────
+    
 
     private JPanel createLoyaltyPanel() {
         JPanel panel = UIFactory.borderPanel("Loyalty & Marketing Management", 20);
@@ -325,7 +318,7 @@ public class AdminDashboard extends JFrame {
             m.addRow(new Object[]{c.getId(), c.getName(), c.getPhone(), c.getRewardTier(), c.getLoyaltyPoints(), "$" + c.getTotalSpent()});
     }
 
-    // ─── Reports ──────────────────────────────────────────────────────────────
+
 
     private JPanel createReportsPanel() {
         JPanel panel = new JPanel(new GridBagLayout());
@@ -346,7 +339,6 @@ public class AdminDashboard extends JFrame {
         return panel;
     }
 
-    // ─── Helper ───────────────────────────────────────────────────────────────
 
     private JPanel buildCtrlPanel(JComponent[] row1Items, JButton[] row2Buttons) {
         JPanel ctrl = new JPanel(new GridLayout(2, 1, 5, 5));

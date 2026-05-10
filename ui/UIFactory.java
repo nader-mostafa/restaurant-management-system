@@ -1,12 +1,14 @@
 package ui;
 
+
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class UIFactory {
 
-    // ألوان ثابتة
+    
     static final Color BLUE   = new Color(41, 128, 185);
     static final Color RED    = new Color(231, 76, 60);
     static final Color GREEN  = new Color(46, 204, 113);

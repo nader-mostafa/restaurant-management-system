@@ -1,5 +1,7 @@
 package ui;
 
+
+
 import com.formdev.flatlaf.FlatDarkLaf;
 import db.DatabaseManager;
 
@@ -19,14 +21,14 @@ public class App {
         UIManager.put("TabbedPane.showTabSeparators", true);
         UIManager.put("TabbedPane.tabSeparatorsFullHeight", true);
         
-        // Font adjustments
+        
         Font defaultFont = new Font("Segoe UI", Font.PLAIN, 14);
         UIManager.put("defaultFont", defaultFont);
 
-        // Initialize Database
+ 
         DatabaseManager.initializeDatabase();
 
-        // Launch Login
+        
         SwingUtilities.invokeLater(() -> {
             new LoginFrame().setVisible(true);
         });

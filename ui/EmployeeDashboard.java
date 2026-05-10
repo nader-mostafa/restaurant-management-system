@@ -1,5 +1,7 @@
 package ui;
 
+
+
 import models.Models.*;
 import services.AdminService;
 import services.AuthService;
@@ -45,7 +47,7 @@ public class EmployeeDashboard extends JFrame {
         checkNotifications();
     }
 
-    // ─── Edit Profile ─────────────────────────────────────────────────────────
+  
 
     private void showEditProfileDialog() {
         JPanel p = new JPanel(new GridLayout(6, 2, 10, 8));
@@ -73,7 +75,7 @@ public class EmployeeDashboard extends JFrame {
         }
     }
 
-    // ─── Customer CRM ─────────────────────────────────────────────────────────
+
 
     private JPanel createCustomerPanel() {
         JPanel panel = UIFactory.borderPanel("Customer Relationship Management", 20);
@@ -208,13 +210,12 @@ public class EmployeeDashboard extends JFrame {
         for (Customer c : EmployeeService.getAllCustomers()) cbCustomers.addItem(c);
     }
 
-    // ─── POS ──────────────────────────────────────────────────────────────────
+
 
     private JPanel createPOSPanel() {
         JPanel panel = new JPanel(new BorderLayout(15, 15));
         panel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
-        // Left: Menu
         JPanel menuPanel = new JPanel(new BorderLayout());
         menuPanel.setBorder(BorderFactory.createTitledBorder("Available Menu"));
         DefaultListModel<Meal> mealModel = new DefaultListModel<>();
@@ -223,7 +224,7 @@ public class EmployeeDashboard extends JFrame {
         for (Meal m : AdminService.getAllMeals()) mealModel.addElement(m);
         menuPanel.add(new JScrollPane(listMeals), BorderLayout.CENTER);
 
-        // Middle: Cart
+        
         JPanel cartPanel = new JPanel(new BorderLayout());
         cartPanel.setBorder(BorderFactory.createTitledBorder("Active Order Cart"));
         DefaultListModel<String> cartModel = new DefaultListModel<>();
@@ -251,7 +252,7 @@ public class EmployeeDashboard extends JFrame {
         menuPanel.add(btnAddCart, BorderLayout.SOUTH);
         cartPanel.add(lblTotal, BorderLayout.SOUTH);
 
-        // Right: Checkout
+        
         JPanel checkoutPanel = new JPanel(new GridBagLayout());
         checkoutPanel.setBorder(BorderFactory.createTitledBorder("Checkout"));
         GridBagConstraints gbc = new GridBagConstraints(); gbc.insets = new Insets(10,10,10,10); gbc.fill = GridBagConstraints.HORIZONTAL; gbc.gridx = 0;
@@ -291,7 +292,7 @@ public class EmployeeDashboard extends JFrame {
         return panel;
     }
 
-    // ─── Orders ───────────────────────────────────────────────────────────────
+
 
     private JPanel createOrdersPanel() {
         JPanel panel = UIFactory.borderPanel("Orders Management", 20);
@@ -328,7 +329,7 @@ public class EmployeeDashboard extends JFrame {
         return panel;
     }
 
-    // ─── Notifications ────────────────────────────────────────────────────────
+    
 
     private JPanel createNotificationPanel() {
         JPanel panel = UIFactory.borderPanel("System Inbox", 20);

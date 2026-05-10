@@ -72,7 +72,10 @@ public class AdminService {
             pstmt.setString(2, "%" + keyword + "%");
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                list.add(new Employee(rs.getInt("id"), rs.getString("username"), rs.getString("password"), rs.getString("name")));
+                list.add(new Employee(rs.getInt("id"),
+                rs.getString("username"),
+                rs.getString("password"),
+                rs.getString("name")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -86,7 +89,10 @@ public class AdminService {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT id, username, password, name FROM users WHERE role = 'employee'")) {
             while (rs.next()) {
-                list.add(new Employee(rs.getInt("id"), rs.getString("username"), rs.getString("password"), rs.getString("name")));
+                list.add(new Employee(rs.getInt("id"),
+                rs.getString("username"),
+                rs.getString("password"),
+                rs.getString("name")));
             }
         } catch (SQLException e) {
             e.printStackTrace();

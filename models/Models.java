@@ -1,14 +1,13 @@
 package models;
 
-// ده الملف المسؤول عن النماذج الأساسية في المشروع (Models) زي المستخدمين والوجبات والطلبات
-// اتجمعوا في ملف واحد عشان الكود يكون أنظف وأسهل للفهم وكل كلاس يعتبر قسم لوحده
+// ده الملف المسؤول عن النماذج الأساسية في المشروع (Models) زي المستخدمين والوجبات والطلبات. 
+// اتجمعوا في ملف واحد عشان الكود يكون أنظف وأسهل للفهم وكل كلاس يعتبر قسم لوحده.
 
 import java.util.Date;
 
 public class Models {
-    // ==========================================
-    // قسم المستخدمين (Users)
-    // ==========================================
+
+  
     public static abstract class User {
         protected int id;
         protected String username;
@@ -46,9 +45,6 @@ public class Models {
         }
     }
 
-    // ==========================================
-    // قسم العملاء (Customers)
-    // ==========================================
     public static class Customer {
         private int id;
         private String name;
@@ -84,9 +80,7 @@ public class Models {
         }
     }
 
-    // ==========================================
-    // قسم الوجبات (Meals)
-    // ==========================================
+
     public static class Meal {
         private int id;
         private String name;
@@ -114,9 +108,7 @@ public class Models {
         }
     }
 
-    // ==========================================
-    // قسم العروض (Offers)
-    // ==========================================
+  
     public static class Offer {
         private int id;
         private String name;
@@ -136,9 +128,7 @@ public class Models {
         public double getDiscountPercent() { return discountPercent; }
     }
 
-    // ==========================================
-    // قسم الطلبات (Orders)
-    // ==========================================
+
     public static class Order {
         private int id;
         private int employeeId;

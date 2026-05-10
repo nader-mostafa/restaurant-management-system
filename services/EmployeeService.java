@@ -3,7 +3,6 @@ package services;
 import db.DatabaseManager;
 import models.Models.Customer;
 import models.Models.Order;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -61,8 +60,7 @@ public class EmployeeService {
             int orderId = -1;
             try (PreparedStatement pstmt = conn.prepareStatement("INSERT INTO orders (employee_id, customer_id, total_amount) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS)) {
                 pstmt.setInt(1, employeeId);
-                if (customerId > 0) pstmt.setInt(2, customerId);
-                else pstmt.setNull(2, java.sql.Types.INTEGER);
+                pstmt.setInt(2, customerId);
                 pstmt.setDouble(3, totalAmount);
                 pstmt.executeUpdate();
                 ResultSet rs = pstmt.getGeneratedKeys();
@@ -136,6 +134,7 @@ public class EmployeeService {
              PreparedStatement pstmt = conn.prepareStatement("SELECT id, message FROM notifications WHERE user_id = ? AND is_read = 0")) {
             pstmt.setInt(1, userId);
             ResultSet rs = pstmt.executeQuery();
+            
             List<Integer> idsToUpdate = new ArrayList<>();
             while (rs.next()) {
                 list.add(rs.getString("message"));

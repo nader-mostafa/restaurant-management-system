@@ -1,6 +1,5 @@
 package ui;
 
-// ده الملف المسؤول عن واجهة المستخدم الخاصة بشاشة تسجيل الدخول (Login)
 
 import models.Models.Admin;
 import models.Models.Employee;
@@ -22,12 +21,12 @@ public class LoginFrame extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         
-        // Main Container
+     
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(40, 50, 40, 50));
 
-        // Title
+        
         JLabel lblTitle = new JLabel("Welcome Back");
         lblTitle.setFont(new Font("Segoe UI", Font.BOLD, 28));
         lblTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -37,7 +36,7 @@ public class LoginFrame extends JFrame {
         lblSub.setForeground(Color.GRAY);
         lblSub.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        // Inputs
+        
         txtUsername = new JTextField();
         txtUsername.putClientProperty("JTextField.placeholderText", "Username");
         txtUsername.putClientProperty("JComponent.roundRect", true);
@@ -50,7 +49,7 @@ public class LoginFrame extends JFrame {
         txtPassword.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         txtPassword.setMaximumSize(new Dimension(Integer.MAX_VALUE, 40));
 
-        // Login Button
+        
         btnLogin = new JButton("Login");
         btnLogin.putClientProperty("JButton.buttonType", "roundRect");
         btnLogin.setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -62,7 +61,7 @@ public class LoginFrame extends JFrame {
         
         btnLogin.addActionListener(e -> attemptLogin());
 
-        // Assembly
+        
         mainPanel.add(lblTitle);
         mainPanel.add(Box.createRigidArea(new Dimension(0, 5)));
         mainPanel.add(lblSub);
